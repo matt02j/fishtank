@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://jb46vidamagj"]
+
+[ext_resource type="Texture2D" uid="uid://0jgndyvo3oi0" path="res://assets/red_fish/red_fish1.png" id="1_gx8g0"]
+[ext_resource type="Texture2D" uid="uid://dgmdqpnigra67" path="res://assets/red_fish/red_fish2.png" id="2_0kmrb"]
+[ext_resource type="Texture2D" uid="uid://7wnh6uh0g4u6" path="res://assets/red_fish/red_fish3.png" id="3_jcgm8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p50re"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gx8g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0kmrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jcgm8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="animated fish" type="Node2D" unique_id=236421108]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=995477558]
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+frame = 1
+frame_progress = 0.68947506

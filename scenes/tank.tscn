@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://c0ctl2b8tpk08"]
+
+[ext_resource type="Script" uid="uid://c14be5uqrggob" path="res://scenes/tank.gd" id="1_lj6hj"]
+[ext_resource type="Texture2D" uid="uid://de84n37p36xwk" path="res://assets/What-are-fish-tank-backgrounds.jpg" id="1_qrxud"]
+[ext_resource type="Texture2D" uid="uid://dnr4cbqrj20yc" path="res://assets/grass/grass1.png" id="2_01nm4"]
+[ext_resource type="Texture2D" uid="uid://dwf5i7wmtmvdl" path="res://assets/grass/grass2.png" id="3_k4vtj"]
+[ext_resource type="PackedScene" uid="uid://jb46vidamagj" path="res://scenes/animated_fish.tscn" id="4_k4vtj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p50re"]
+size = Vector2(51.25, 1128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq8ah"]
+size = Vector2(1950, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p50re"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_01nm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k4vtj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Tank" type="Node2D" unique_id=196767891]
+script = ExtResource("1_lj6hj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1763418714]
+position = Vector2(973.99994, 548)
+scale = Vector2(0.97450006, 0.7907143)
+texture = ExtResource("1_qrxud")
+
+[node name="borders" type="StaticBody2D" parent="." unique_id=1489326921]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=897555276]
+position = Vector2(-32, 548)
+shape = SubResource("RectangleShape2D_p50re")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=757043922]
+position = Vector2(1949, 526)
+shape = SubResource("RectangleShape2D_p50re")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=170261230]
+position = Vector2(965, -27)
+shape = SubResource("RectangleShape2D_dq8ah")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1613259737]
+position = Vector2(963, 1108)
+shape = SubResource("RectangleShape2D_dq8ah")
+
+[node name="grasses" type="Node" parent="." unique_id=1116069988]
+
+[node name="grass_med" type="AnimatedSprite2D" parent="grasses" unique_id=35662081]
+position = Vector2(971, 731.00006)
+scale = Vector2(3.21875, 2.34375)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_med2" type="AnimatedSprite2D" parent="grasses" unique_id=1636531027]
+position = Vector2(726, 769)
+scale = Vector2(3.21875, 2.34375)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_med3" type="AnimatedSprite2D" parent="grasses" unique_id=142781068]
+position = Vector2(1640, 713.00006)
+scale = Vector2(3.21875, 2.34375)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_med4" type="AnimatedSprite2D" parent="grasses" unique_id=34939070]
+position = Vector2(1404, 818.00006)
+scale = Vector2(3.21875, 2.34375)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small" type="AnimatedSprite2D" parent="grasses" unique_id=1639936686]
+position = Vector2(908, 855)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small2" type="AnimatedSprite2D" parent="grasses" unique_id=266949672]
+position = Vector2(465, 989)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small4" type="AnimatedSprite2D" parent="grasses" unique_id=78845890]
+position = Vector2(915, 965)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small6" type="AnimatedSprite2D" parent="grasses" unique_id=1025763609]
+position = Vector2(1760, 974)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small5" type="AnimatedSprite2D" parent="grasses" unique_id=1976114983]
+position = Vector2(1319, 700)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_small3" type="AnimatedSprite2D" parent="grasses" unique_id=1067092343]
+position = Vector2(534, 844)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_large" type="AnimatedSprite2D" parent="grasses" unique_id=899667724]
+position = Vector2(107.00001, 960)
+scale = Vector2(4.828125, 4.7031217)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_large2" type="AnimatedSprite2D" parent="grasses" unique_id=65546582]
+position = Vector2(328, 793)
+scale = Vector2(4.828125, 4.7031217)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_large3" type="AnimatedSprite2D" parent="grasses" unique_id=1891590127]
+position = Vector2(705, 947)
+scale = Vector2(4.828125, 4.7031217)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_large4" type="AnimatedSprite2D" parent="grasses" unique_id=905828165]
+position = Vector2(1123, 883.00006)
+scale = Vector2(4.828125, 4.7031217)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="grass_large5" type="AnimatedSprite2D" parent="grasses" unique_id=169861905]
+position = Vector2(1507.0001, 943.00006)
+scale = Vector2(4.828125, 4.7031217)
+sprite_frames = SubResource("SpriteFrames_p50re")
+autoplay = "default"
+
+[node name="fishes" type="Node" parent="." unique_id=1618311524]
+
+[node name="animated fish" parent="fishes" unique_id=236421108 instance=ExtResource("4_k4vtj")]
+position = Vector2(403, 308)
+
+[node name="Timer" type="Timer" parent="." unique_id=56306087]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
