@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://jb46vidamagj"]
 
+[ext_resource type="Script" uid="uid://duxdik56r5t37" path="res://scenes/animated_fish.gd" id="1_0kmrb"]
 [ext_resource type="Texture2D" uid="uid://0jgndyvo3oi0" path="res://assets/red_fish/red_fish1.png" id="1_gx8g0"]
 [ext_resource type="Texture2D" uid="uid://dgmdqpnigra67" path="res://assets/red_fish/red_fish2.png" id="2_0kmrb"]
 [ext_resource type="Texture2D" uid="uid://7wnh6uh0g4u6" path="res://assets/red_fish/red_fish3.png" id="3_jcgm8"]
@@ -21,10 +22,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="animated fish" type="Node2D" unique_id=236421108]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p50re"]
+radius = 5.0
+height = 26.0
+
+[node name="animated fish" type="Area2D" unique_id=253067500 groups=["fishes"]]
+script = ExtResource("1_0kmrb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=995477558]
 sprite_frames = SubResource("SpriteFrames_p50re")
 autoplay = "default"
 frame = 1
 frame_progress = 0.68947506
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384091187]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_p50re")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

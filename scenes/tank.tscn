@@ -34,21 +34,21 @@ position = Vector2(973.99994, 548)
 scale = Vector2(0.97450006, 0.7907143)
 texture = ExtResource("1_qrxud")
 
-[node name="borders" type="StaticBody2D" parent="." unique_id=1489326921]
+[node name="borders" type="Area2D" parent="." unique_id=1274152043 groups=["border"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=897555276]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=897555276 groups=["border"]]
 position = Vector2(-32, 548)
 shape = SubResource("RectangleShape2D_p50re")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=757043922]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=757043922 groups=["border"]]
 position = Vector2(1949, 526)
 shape = SubResource("RectangleShape2D_p50re")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=170261230]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=170261230 groups=["border"]]
 position = Vector2(965, -27)
 shape = SubResource("RectangleShape2D_dq8ah")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1613259737]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1613259737 groups=["border"]]
 position = Vector2(963, 1108)
 shape = SubResource("RectangleShape2D_dq8ah")
 

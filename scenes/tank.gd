@@ -18,7 +18,7 @@ func spawn_fish(level: int) -> void:
 
 	var fish = fish_scene.instantiate()
 	fish.scale *= level
-	fish.position = Vector2(randi_range(0,1920),randi_range(0,1080))
+	fish.position = Vector2(randi_range(100,1820),randi_range(100,980))
 	$fishes.add_child(fish)
 
 
