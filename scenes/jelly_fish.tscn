@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://buf746j07cxlm"]
+
+[ext_resource type="Texture2D" uid="uid://bx0u66stsc2ga" path="res://assets/jelly_fish/frame_0005.png" id="1_ketkd"]
+[ext_resource type="Script" uid="uid://df1n3p6hc85qv" path="res://scenes/jelly_fish.gd" id="1_kvhpb"]
+[ext_resource type="Texture2D" uid="uid://b35ujbjvahlve" path="res://assets/jelly_fish/frame_0006.png" id="2_kvhpb"]
+[ext_resource type="Texture2D" uid="uid://nm6g0wd3ktu3" path="res://assets/jelly_fish/frame_0007.png" id="3_ef1s7"]
+[ext_resource type="Texture2D" uid="uid://6gsi10c6fchc" path="res://assets/jelly_fish/frame_0008.png" id="4_7hilg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tta0g"]
+radius = 9.0
+height = 22.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dq8ah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ketkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kvhpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ef1s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7hilg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Jelly_fish" type="Area2D" unique_id=1153315502]
+script = ExtResource("1_kvhpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1664725175]
+shape = SubResource("CapsuleShape2D_tta0g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=406031511]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_dq8ah")
+autoplay = "default"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

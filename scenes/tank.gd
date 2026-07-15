@@ -1,7 +1,7 @@
 extends Node2D
 
 var fish_scene: PackedScene = load("res://scenes/animated_fish.tscn")
-
+var jellyfish_scene: PackedScene = load("res://scenes/jelly_fish.tscn")
 var rng := RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +15,13 @@ func _process(delta: float) -> void:
 
 
 func spawn_fish(level: int) -> void:
-
-	var fish = fish_scene.instantiate()
+	var fish
+	match rng.randi_range(0,2):
+		0, 1:
+			fish = fish_scene.instantiate()
+		2:
+			fish = jellyfish_scene.instantiate()
+			
 	fish.scale *= level
 	fish.position = Vector2(randi_range(100,1820),randi_range(100,980))
 	$fishes.add_child(fish)

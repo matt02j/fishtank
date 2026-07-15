@@ -3,10 +3,34 @@
 [ext_resource type="Script" uid="uid://duxdik56r5t37" path="res://scenes/animated_fish.gd" id="1_0kmrb"]
 [ext_resource type="Texture2D" uid="uid://0jgndyvo3oi0" path="res://assets/red_fish/red_fish1.png" id="1_gx8g0"]
 [ext_resource type="Texture2D" uid="uid://dgmdqpnigra67" path="res://assets/red_fish/red_fish2.png" id="2_0kmrb"]
+[ext_resource type="Texture2D" uid="uid://krrks8f0jx2x" path="res://assets/kai_fish/frame_0001.png" id="2_xdja0"]
 [ext_resource type="Texture2D" uid="uid://7wnh6uh0g4u6" path="res://assets/red_fish/red_fish3.png" id="3_jcgm8"]
+[ext_resource type="Texture2D" uid="uid://df0fa8cmff7or" path="res://assets/kai_fish/frame_0003.png" id="3_otyr8"]
+[ext_resource type="Texture2D" uid="uid://6jinnq20psyh" path="res://assets/kai_fish/frame_0004.png" id="4_852el"]
+[ext_resource type="Texture2D" uid="uid://ckboyimfl57a0" path="res://assets/kai_fish/frame_0005.png" id="5_7bmfx"]
+[ext_resource type="Texture2D" uid="uid://b10pe1r6f1jlw" path="res://assets/yellow_fish/yellow_fish1.png" id="5_7j50w"]
+[ext_resource type="Texture2D" uid="uid://c2r4oke3fqimd" path="res://assets/yellow_fish/yellow_fish2.png" id="6_xwxoh"]
+[ext_resource type="Texture2D" uid="uid://c501v38fepcu3" path="res://assets/yellow_fish/yellow_fish3.png" id="7_kc3ik"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p50re"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xdja0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_otyr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_852el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7bmfx")
+}],
+"loop": 1,
+"name": &"kai_fish",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_gx8g0")
@@ -18,7 +42,21 @@ animations = [{
 "texture": ExtResource("3_jcgm8")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7j50w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xwxoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kc3ik")
+}],
+"loop": 1,
+"name": &"yellow",
 "speed": 5.0
 }]
 
@@ -31,9 +69,8 @@ script = ExtResource("1_0kmrb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=995477558]
 sprite_frames = SubResource("SpriteFrames_p50re")
-autoplay = "default"
-frame = 1
-frame_progress = 0.68947506
+animation = &"kai_fish"
+autoplay = "red"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1384091187]
 position = Vector2(0, 1)

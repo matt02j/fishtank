@@ -5,14 +5,7 @@ var velocity:Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	velocity = Vector2(rng.randi_range(-100,100),rng.randi_range(-100,100))
-	match rng.randi_range(0,2):
-		0:
-			$AnimatedSprite2D.play("red")
-		1:
-			$AnimatedSprite2D.play("yellow")
-		2:
-			$AnimatedSprite2D.play("kai_fish")
-			
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += velocity * delta
